@@ -687,6 +687,7 @@ static int initSourceHeader(rpmSpec spec)
 	return rc;
 
     char *os = rpmExpand("%{_target_os}", NULL);
+	rpmlog(RPMLOG_WARNING, "DEBUG: _target_os macro value: %s\n", os);
     headerPutString(sourcePkg->header, RPMTAG_OS, os);
     free(os);
 
