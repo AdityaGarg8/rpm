@@ -687,7 +687,7 @@ static int initSourceHeader(rpmSpec spec)
 	return rc;
 
     char *os = rpmExpand("%{_target_os}", NULL);
-	rpmlog(RPMLOG_WARNING, "DEBUG: _target_os macro value: %s\n", os);
+    rpmlog(RPMLOG_WARNING, "DEBUG: _target_os macro value: %s\n", os);
     headerPutString(sourcePkg->header, RPMTAG_OS, os);
     free(os);
 
@@ -1351,6 +1351,7 @@ static rpmRC finalizeSpec(rpmSpec spec)
 
     char *platform = rpmExpand("%{_target_platform}", NULL);
     char *os = rpmExpand("%{_target_os}", NULL);
+	rpmlog(RPMLOG_WARNING, "DEBUG: _target_os macro value 2: %s\n", os);
     char *optflags = rpmExpand("%{optflags}", NULL);
 
     /* XXX Skip valid arch check if not building binary package */
